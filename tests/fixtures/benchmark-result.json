@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "fixture-cpu-fp32-b1-s128-r1",
+  "recorded_at_utc": "2026-08-12T12:00:00Z",
+  "model": {
+    "filename": "fixture.onnx",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "source_model": "nomic-ai/nomic-embed-text-v1.5",
+    "source_revision": "e9b6763023c676ca8431644204f50c2b100d9aab",
+    "precision": "fp32",
+    "quantization_granularity": "none",
+    "metadata_filename": null,
+    "metadata_sha256": null
+  },
+  "execution": {
+    "requested": "cpu",
+    "available_providers": ["CPUExecutionProvider"],
+    "session_providers": ["CPUExecutionProvider"],
+    "require_npu": false,
+    "npu_verified": false,
+    "assignment": null,
+    "session_options": {
+      "execution_mode": "ORT_SEQUENTIAL",
+      "intra_op_num_threads": 8,
+      "inter_op_num_threads": 1
+    },
+    "npu_cache": null
+  },
+  "workload": {
+    "batch_size": 1,
+    "sequence_length": 128,
+    "warmup_iterations": 20,
+    "timed_iterations": 1,
+    "repeat": 1,
+    "input_kind": "fixed-shape synthetic microbenchmark",
+    "input_file": null,
+    "input_sha256": null,
+    "text_prefix": ""
+  },
+  "metrics": {
+    "session_creation_ms": 12.5,
+    "inference_only": {
+      "latencies_ms": [1.0],
+      "mean_ms": 1.0,
+      "standard_deviation_ms": 0.0,
+      "median_ms": 1.0,
+      "p50_ms": 1.0,
+      "p95_ms": 1.0,
+      "p99_ms": 1.0,
+      "throughput_docs_per_second": 1000.0
+    },
+    "end_to_end": null
+  }
+}

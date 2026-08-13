@@ -1,0 +1,118 @@
+{
+  "environment": {
+    "controls": {
+      "ac_power_online": true,
+      "background_snapshot": {
+        "captured_at_utc": "2026-08-13T01:39:13.9619480Z",
+        "observation_window_seconds": 5,
+        "resident_workloads": [
+          "llama-server (2 processes; hosting an embedding model and a reranker; 0 CPU seconds during observation)",
+          "vmmemWSL (0 CPU seconds during observation)",
+          "Codex",
+          "Firefox",
+          "Chrome"
+        ]
+      },
+      "power_profile": "Balanced (381b4222-f694-41f0-9685-ff5bb260df2e)"
+    },
+    "hardware": {
+      "cpu": "AMD Ryzen AI 7 PRO 350 (8 cores, 16 logical processors)",
+      "npu": "AMD XDNA2 / NPU Compute Accelerator Device",
+      "ram": "67799531520 bytes",
+      "system": "Lenovo 21TBCTO1WW"
+    },
+    "software": {
+      "npu_driver": "32.0.20101.3760",
+      "npu_driver_inf": "oem63.inf",
+      "ryzen_ai_sdk": "1.8.0",
+      "windows_build": "Windows 11 Pro 10.0.26200"
+    }
+  },
+  "limitations": [
+    "One laptop; no cross-machine replication.",
+    "Balanced AC power profile; resident desktop applications were present.",
+    "No calibrated power, energy, temperature, or sustained-load measurement.",
+    "CPU b32/s512 is censored: one 45-minute timeout and two long-ceiling samples.",
+    "BGE corner timings are single-process exploratory checks.",
+    "Qwen compatibility uses a controlled FP16 OGA DirectML-to-hybrid path, not AWQ."
+  ],
+  "published_files": [
+    {
+      "bytes": 1408,
+      "path": "bge-corners.csv",
+      "sha256": "36ce8b61a866e7ea7dab7282e79e3dc42c41d9a169550c596d7a42001fc50e63"
+    },
+    {
+      "bytes": 14700,
+      "path": "fidelity.json",
+      "sha256": "8a8e3a7e4bfaa0ef47409d9fd1dbe1cd89fa1c1856e489beebdce88937762b1c"
+    },
+    {
+      "bytes": 4261,
+      "path": "fidelity.svg",
+      "sha256": "3b3c1bb86495a99fc65b8f92cd16b8435714ae02c630b26a55039b40fe425c17"
+    },
+    {
+      "bytes": 3702,
+      "path": "nomic-matrix.csv",
+      "sha256": "63f2090614ef375d43393a55fb1b18a313f497b58166ad3adb3e9936b1c11c83"
+    },
+    {
+      "bytes": 4448,
+      "path": "nomic-speedup.svg",
+      "sha256": "c4e40e5b83ae5ce2a06677baa1d1bfc44af87dcbf2943f47e6d30c99d2ecb617"
+    },
+    {
+      "bytes": 9206,
+      "path": "qwen-compatibility.json",
+      "sha256": "c0252d7df86d8acc1085f23dd8fd728a11ff0a2b071d0d1ecf724201e1367063"
+    }
+  ],
+  "recorded_through_utc": "2026-08-13T12:40:13.527279Z",
+  "schema_version": "1.0.0",
+  "scope": {
+    "bge_exploratory_groups": 6,
+    "nomic_censored_groups": 1,
+    "nomic_confirmatory_groups": 17,
+    "qwen_compatibility_cells": 4
+  },
+  "snapshot_id": "rai180-20260813",
+  "source_artifacts": [
+    {
+      "path": "benchmarks/results/local/nomic-rai180-fp32-20260813/summary.json",
+      "sha256": "c2f4a2372499cbbf5fde5a4f22d77129e38b19749d593bb34e9ef5922475a7ee"
+    },
+    {
+      "path": "benchmarks/results/local/nomic-rai180-fp32-20260813/study.json",
+      "sha256": "f862a17ffe5e0b473a119269cb14cc331203697756a32f307962a69482a5cccb"
+    },
+    {
+      "path": "benchmarks/results/local/nomic-rai180-fp32-cpu-b32-s512-extension-20260813/summary.json",
+      "sha256": "633a328027bfe937770043389d61fb3e327e5141ce1b53ac7318abf7ceeefd5a"
+    },
+    {
+      "path": "evaluation/results/local/beir-scifact-rai180-fp32/fidelity.json",
+      "sha256": "4ea228f576ebae5a96aa936786a1883a60a96040bb8125594e2144e5b09894ff"
+    },
+    {
+      "path": "evaluation/results/local/beir-scifact-bge-rai180-fp32/fidelity.json",
+      "sha256": "53ca274c823f1f725224050d45a17ca5058e0650a56288084148c6d8cb67c62b"
+    },
+    {
+      "path": "evaluation/results/local/pilot-rai180/fidelity.json",
+      "sha256": "e32cd070bb1bd434904ee506d4fef9864c9000bff6e5975be64c5dc22457d51c"
+    },
+    {
+      "path": "benchmarks/results/local/pilot-rai180/pilot-rai180-npu-int8pc-b1-s128-failure/failure.json",
+      "sha256": "ab8a329d92185edd0747038fa1ad2beff29461ddc8175c2fea425031cd7c2df2"
+    },
+    {
+      "path": "compatibility/results/local/qwen3-rai171-rai180-20260813/matrix.json",
+      "sha256": "78a273347a47892f47d52e08a7afe950f305bed9083536beb8b523091ab17b22"
+    },
+    {
+      "path": "environment.local.json",
+      "sha256": "6416255105f75257160549e46ef2e4f459e39c7d16c3614030f8615735f8e1b5"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Publication manifests hash exact bytes, so Git must not rewrite line endings.
+benchmarks/results/published/** text eol=lf

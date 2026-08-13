@@ -1,0 +1,436 @@
+{
+  "bge": {
+    "dataset": {
+      "canonical_outputs": {
+        "corpus": {
+          "filename": "corpus.jsonl",
+          "rows": 5183,
+          "sha256": "4ff9ff19edc27fc2def69a1c9e18597af9a9f4cb66ba743f9045935c05b3a18c"
+        },
+        "qrels": {
+          "filename": "qrels.jsonl",
+          "rows": 339,
+          "sha256": "e27a37f0e8dc99958ed6dd7977f08e28aecf3f0234098aa7daaf55be793e021b"
+        },
+        "queries": {
+          "filename": "queries.jsonl",
+          "rows": 300,
+          "sha256": "2ac08e33380aa2e33e25afc80e2f81820395da84577aae980bc80e342579b5c0"
+        }
+      },
+      "id": "beir/scifact",
+      "licenses": {
+        "abstracts": "ODC-By-1.0",
+        "claims_and_annotations": "CC-BY-4.0",
+        "source": "https://github.com/allenai/scifact/blob/master/LICENSE.md"
+      },
+      "revision": "536e14446a0ba56ed1398ab1055f39fe852686ecad24a6306c80c490fa8e0165",
+      "source": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/scifact.zip",
+      "spec_filename": "beir-scifact.json",
+      "spec_sha256": "54dd8fc59bed2d190416333b4daa97cdf1762f4e71eca790583f488e64b6143f",
+      "split": "test"
+    },
+    "decision": {
+      "checks": [
+        {
+          "actual": 0.9999999999987268,
+          "name": "onnx_fp32_cpu.minimum_per_item_cosine",
+          "passed": true,
+          "threshold": 0.9999
+        },
+        {
+          "actual": 3.91155481338501e-07,
+          "name": "onnx_fp32_cpu.maximum_absolute_error",
+          "passed": true,
+          "threshold": 0.001
+        },
+        {
+          "actual": 0.0,
+          "name": "onnx_fp32_cpu.recall_at_10_drop",
+          "passed": true,
+          "threshold": 0.02
+        },
+        {
+          "actual": 0.0,
+          "name": "onnx_fp32_cpu.ndcg_at_10_drop",
+          "passed": true,
+          "threshold": 0.02
+        },
+        {
+          "actual": 0.9999999994249945,
+          "name": "onnx_fp32_cpu.mean_ranking_spearman",
+          "passed": true,
+          "threshold": 0.95
+        },
+        {
+          "actual": 0.9992730068599508,
+          "name": "onnx_fp32_npu.minimum_per_item_cosine",
+          "passed": true,
+          "threshold": 0.98
+        },
+        {
+          "actual": 0.015817850828170776,
+          "name": "onnx_fp32_npu.maximum_absolute_error",
+          "passed": true,
+          "threshold": 0.1
+        },
+        {
+          "actual": -0.0011111111111110628,
+          "name": "onnx_fp32_npu.recall_at_10_drop",
+          "passed": true,
+          "threshold": 0.02
+        },
+        {
+          "actual": 0.004889332681272007,
+          "name": "onnx_fp32_npu.ndcg_at_10_drop",
+          "passed": true,
+          "threshold": 0.02
+        },
+        {
+          "actual": 0.9994210101136559,
+          "name": "onnx_fp32_npu.mean_ranking_spearman",
+          "passed": true,
+          "threshold": 0.95
+        }
+      ],
+      "passed": true
+    },
+    "drift": {
+      "onnx_fp32_cpu": {
+        "max_absolute_error": 3.91155481338501e-07,
+        "mean_cosine": 0.9999999999998019,
+        "min_cosine": 0.9999999999987268,
+        "worst_absolute_error_item": "document:5398179",
+        "worst_cosine_item": "document:5398179"
+      },
+      "onnx_fp32_npu": {
+        "max_absolute_error": 0.015817850828170776,
+        "mean_cosine": 0.9997340951209638,
+        "min_cosine": 0.9992730068599508,
+        "worst_absolute_error_item": "document:25388309",
+        "worst_cosine_item": "document:21459247"
+      }
+    },
+    "execution_evidence": {
+      "onnx_fp32_cpu": {
+        "assignment": null,
+        "model_filename": "bge-small-en-v1.5_b32_seq128.onnx",
+        "model_sha256": "c1e3b798003c1a0915ede716c36be8d8314a4c057c5b4c0639a96d554dcbb518",
+        "npu_verified": false,
+        "requested_provider": "cpu",
+        "session_creation_ms": 196.340099995723,
+        "session_providers": [
+          "CPUExecutionProvider"
+        ]
+      },
+      "onnx_fp32_npu": {
+        "assignment": {
+          "cpu_nodes": 5,
+          "npu_devices": [
+            "VAIML"
+          ],
+          "npu_node_coverage": 0.989010989010989,
+          "npu_nodes": 450,
+          "npu_subgraphs": 1,
+          "report_file": "vitisai_ep_report.json",
+          "report_sha256": "5d33fdd8baf191c0c6c45e045ea3b6b0f2e3640a94fe4ba3848b49e71c486dae",
+          "total_nodes": 455
+        },
+        "model_filename": "bge-small-en-v1.5_b32_seq128.onnx",
+        "model_sha256": "c1e3b798003c1a0915ede716c36be8d8314a4c057c5b4c0639a96d554dcbb518",
+        "npu_verified": true,
+        "requested_provider": "npu",
+        "session_creation_ms": 927.5669000053313,
+        "session_providers": [
+          "VitisAIExecutionProvider",
+          "CPUExecutionProvider"
+        ]
+      }
+    },
+    "model": {
+      "document_prefix": "",
+      "id": "BAAI/bge-small-en-v1.5",
+      "pooling": "cls",
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a"
+    },
+    "recorded_at_utc": "2026-08-13T12:25:58.483157Z",
+    "retrieval": {
+      "onnx_fp32_cpu": {
+        "map_at_10": 0.6380800264550265,
+        "mean_ranking_spearman": 0.9999999994249945,
+        "mrr_at_10": 0.6499193121693122,
+        "ndcg_at_10": 0.6803406629947804,
+        "precision_at_10": 0.08966666666666666,
+        "recall_at_1": 0.5520555555555556,
+        "recall_at_10": 0.7978888888888889,
+        "recall_at_100": 0.9383333333333334,
+        "recall_at_5": 0.7376666666666667
+      },
+      "onnx_fp32_npu": {
+        "map_at_10": 0.630903439153439,
+        "mean_ranking_spearman": 0.9994210101136559,
+        "mrr_at_10": 0.6431415343915343,
+        "ndcg_at_10": 0.6754513303135083,
+        "precision_at_10": 0.09,
+        "recall_at_1": 0.5387222222222222,
+        "recall_at_10": 0.7989999999999999,
+        "recall_at_100": 0.9383333333333334,
+        "recall_at_5": 0.7348888888888889
+      },
+      "pytorch_fp32": {
+        "map_at_10": 0.6380800264550265,
+        "mrr_at_10": 0.6499193121693122,
+        "ndcg_at_10": 0.6803406629947804,
+        "precision_at_10": 0.08966666666666666,
+        "recall_at_1": 0.5520555555555556,
+        "recall_at_10": 0.7978888888888889,
+        "recall_at_100": 0.9383333333333334,
+        "recall_at_5": 0.7376666666666667
+      }
+    },
+    "source_fidelity_sha256": "53ca274c823f1f725224050d45a17ca5058e0650a56288084148c6d8cb67c62b",
+    "stage_timings_seconds": {
+      "onnx_fp32_cpu": 121.80904100000043,
+      "onnx_fp32_npu": 23.6829837999976,
+      "pytorch_fp32": 110.6253074999986
+    }
+  },
+  "dynamic_int8_negative_result": {
+    "candidate": "dynamic INT8 per-channel weights",
+    "cpu_fidelity": {
+      "maximum_absolute_error": 0.034440379589796066,
+      "minimum_cosine": 0.9704825764889156,
+      "ndcg_at_10": 0.6252782214634406,
+      "recall_at_10": 0.81,
+      "reference_ndcg_at_10": 0.6445242233484996,
+      "reference_recall_at_10": 0.86
+    },
+    "dataset": {
+      "canonical_outputs": {
+        "corpus": {
+          "filename": "corpus.jsonl",
+          "rows": 2919,
+          "sha256": "0a04506969ec3542df8dfb6214f6be93b7e37d8c58e225c1feef31cf676a3ad4"
+        },
+        "qrels": {
+          "filename": "qrels.jsonl",
+          "rows": 56,
+          "sha256": "c0122e038b29fe66e059f6232a77a8293578ff04104301e0b38baa231d071a9e"
+        },
+        "queries": {
+          "filename": "queries.jsonl",
+          "rows": 50,
+          "sha256": "e169b6b3bd9fba656b68da01b0bd142ad52c7bd84ba3a6ebf1da17a5feb1dd6e"
+        }
+      },
+      "id": "zeta-alpha-ai/NanoSciFact",
+      "license": "CC-BY-4.0",
+      "revision": "309f1d1ae3ae2e092444a8a0c25bed59b82318bc",
+      "spec_sha256": "53309b7a6425b580e7c47f17dd880a3349587aace96c81f2011f80234221ead5",
+      "split": "train"
+    },
+    "decision": "rejected",
+    "npu_rejection": {
+      "assignment_report_sha256": "f414c60e6bae706c85c25e55b18b0857e64cc98509cfb6e918f8c554166de9b0",
+      "error_message": "assignment report contains zero NPU-assigned nodes",
+      "error_type": "NPUVerificationError"
+    },
+    "source_failure_sha256": "ab8a329d92185edd0747038fa1ad2beff29461ddc8175c2fea425031cd7c2df2",
+    "source_fidelity_sha256": "e32cd070bb1bd434904ee506d4fef9864c9000bff6e5975be64c5dc22457d51c"
+  },
+  "nomic": {
+    "dataset": {
+      "canonical_outputs": {
+        "corpus": {
+          "filename": "corpus.jsonl",
+          "rows": 5183,
+          "sha256": "4ff9ff19edc27fc2def69a1c9e18597af9a9f4cb66ba743f9045935c05b3a18c"
+        },
+        "qrels": {
+          "filename": "qrels.jsonl",
+          "rows": 339,
+          "sha256": "e27a37f0e8dc99958ed6dd7977f08e28aecf3f0234098aa7daaf55be793e021b"
+        },
+        "queries": {
+          "filename": "queries.jsonl",
+          "rows": 300,
+          "sha256": "2ac08e33380aa2e33e25afc80e2f81820395da84577aae980bc80e342579b5c0"
+        }
+      },
+      "id": "beir/scifact",
+      "licenses": {
+        "abstracts": "ODC-By-1.0",
+        "claims_and_annotations": "CC-BY-4.0",
+        "source": "https://github.com/allenai/scifact/blob/master/LICENSE.md"
+      },
+      "revision": "536e14446a0ba56ed1398ab1055f39fe852686ecad24a6306c80c490fa8e0165",
+      "source": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/scifact.zip",
+      "spec_filename": "beir-scifact.json",
+      "spec_sha256": "54dd8fc59bed2d190416333b4daa97cdf1762f4e71eca790583f488e64b6143f",
+      "split": "test"
+    },
+    "decision": {
+      "checks": [
+        {
+          "actual": 0.9999999999977409,
+          "name": "onnx_fp32_cpu.minimum_per_item_cosine",
+          "passed": true,
+          "threshold": 0.9999
+        },
+        {
+          "actual": 2.682209014892578e-07,
+          "name": "onnx_fp32_cpu.maximum_absolute_error",
+          "passed": true,
+          "threshold": 0.001
+        },
+        {
+          "actual": 0.0,
+          "name": "onnx_fp32_cpu.recall_at_10_drop",
+          "passed": true,
+          "threshold": 0.02
+        },
+        {
+          "actual": 0.0,
+          "name": "onnx_fp32_cpu.ndcg_at_10_drop",
+          "passed": true,
+          "threshold": 0.02
+        },
+        {
+          "actual": 0.9999999991827394,
+          "name": "onnx_fp32_cpu.mean_ranking_spearman",
+          "passed": true,
+          "threshold": 0.95
+        },
+        {
+          "actual": 0.9971907623568035,
+          "name": "onnx_fp32_npu.minimum_per_item_cosine",
+          "passed": true,
+          "threshold": 0.98
+        },
+        {
+          "actual": 0.01032707653939724,
+          "name": "onnx_fp32_npu.maximum_absolute_error",
+          "passed": true,
+          "threshold": 0.1
+        },
+        {
+          "actual": 0.0010000000000000009,
+          "name": "onnx_fp32_npu.recall_at_10_drop",
+          "passed": true,
+          "threshold": 0.02
+        },
+        {
+          "actual": 0.0014402689649553047,
+          "name": "onnx_fp32_npu.ndcg_at_10_drop",
+          "passed": true,
+          "threshold": 0.02
+        },
+        {
+          "actual": 0.9985076229415643,
+          "name": "onnx_fp32_npu.mean_ranking_spearman",
+          "passed": true,
+          "threshold": 0.95
+        }
+      ],
+      "passed": true
+    },
+    "drift": {
+      "onnx_fp32_cpu": {
+        "max_absolute_error": 2.682209014892578e-07,
+        "mean_cosine": 0.9999999999994618,
+        "min_cosine": 0.9999999999977409,
+        "worst_absolute_error_item": "query:213",
+        "worst_cosine_item": "query:956"
+      },
+      "onnx_fp32_npu": {
+        "max_absolute_error": 0.01032707653939724,
+        "mean_cosine": 0.9983096655589244,
+        "min_cosine": 0.9971907623568035,
+        "worst_absolute_error_item": "query:967",
+        "worst_cosine_item": "query:880"
+      }
+    },
+    "execution_evidence": {
+      "onnx_fp32_cpu": {
+        "assignment": null,
+        "model_filename": "nomic-embed-v1.5_b1_seq128.onnx",
+        "model_sha256": "07f313796612efafb3ef67be7f6c117ea5c213487729f77e932dc72b37e9f4d4",
+        "npu_verified": false,
+        "requested_provider": "cpu",
+        "session_creation_ms": 665.1144999996177,
+        "session_providers": [
+          "CPUExecutionProvider"
+        ]
+      },
+      "onnx_fp32_npu": {
+        "assignment": {
+          "cpu_nodes": 4,
+          "npu_devices": [
+            "VAIML"
+          ],
+          "npu_node_coverage": 0.9939024390243902,
+          "npu_nodes": 652,
+          "npu_subgraphs": 1,
+          "report_file": "vitisai_ep_report.json",
+          "report_sha256": "9af16d05c84588fc0c1b558749491217e85b0920595f326e13c2fdb952344b6f",
+          "total_nodes": 656
+        },
+        "model_filename": "nomic-embed-v1.5_b1_seq128.onnx",
+        "model_sha256": "07f313796612efafb3ef67be7f6c117ea5c213487729f77e932dc72b37e9f4d4",
+        "npu_verified": true,
+        "requested_provider": "npu",
+        "session_creation_ms": 2553.4139000010327,
+        "session_providers": [
+          "VitisAIExecutionProvider",
+          "CPUExecutionProvider"
+        ]
+      }
+    },
+    "model": {
+      "id": "nomic-ai/nomic-embed-text-v1.5",
+      "revision": "e9b6763023c676ca8431644204f50c2b100d9aab"
+    },
+    "recorded_at_utc": "2026-08-13T12:05:12.832787Z",
+    "retrieval": {
+      "onnx_fp32_cpu": {
+        "map_at_10": 0.5964473544973545,
+        "mean_ranking_spearman": 0.9999999991827394,
+        "mrr_at_10": 0.614537037037037,
+        "ndcg_at_10": 0.6509133399176898,
+        "precision_at_10": 0.08966666666666666,
+        "recall_at_1": 0.4948333333333333,
+        "recall_at_10": 0.8003888888888889,
+        "recall_at_100": 0.915,
+        "recall_at_5": 0.7181666666666666
+      },
+      "onnx_fp32_npu": {
+        "map_at_10": 0.5946742063492063,
+        "mean_ranking_spearman": 0.9985076229415643,
+        "mrr_at_10": 0.6127314814814814,
+        "ndcg_at_10": 0.6494730709527345,
+        "precision_at_10": 0.08966666666666666,
+        "recall_at_1": 0.48816666666666664,
+        "recall_at_10": 0.7993888888888889,
+        "recall_at_100": 0.91,
+        "recall_at_5": 0.7214999999999999
+      },
+      "pytorch_fp32": {
+        "map_at_10": 0.5964473544973545,
+        "mrr_at_10": 0.614537037037037,
+        "ndcg_at_10": 0.6509133399176898,
+        "precision_at_10": 0.08966666666666666,
+        "recall_at_1": 0.4948333333333333,
+        "recall_at_10": 0.8003888888888889,
+        "recall_at_100": 0.915,
+        "recall_at_5": 0.7181666666666666
+      }
+    },
+    "source_fidelity_sha256": "4ea228f576ebae5a96aa936786a1883a60a96040bb8125594e2144e5b09894ff",
+    "stage_timings_seconds": {
+      "onnx_fp32_cpu": 586.3675994000005,
+      "onnx_fp32_npu": 207.8673146000001,
+      "pytorch_fp32": 761.310338299998
+    }
+  }
+}

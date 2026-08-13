@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "status": "provisional-pre-results",
+  "rationale": "Project guardrails chosen before the current-SDK rerun; they are not universal embedding-quality standards.",
+  "minimum_per_item_cosine": {
+    "onnx_fp32_cpu": 0.9999,
+    "onnx_fp32_npu": 0.98,
+    "onnx_dynamic_int8_cpu": 0.98,
+    "onnx_dynamic_int8_npu": 0.98
+  },
+  "maximum_absolute_error": {
+    "onnx_fp32_cpu": 0.001,
+    "onnx_fp32_npu": 0.1,
+    "onnx_dynamic_int8_cpu": 0.1,
+    "onnx_dynamic_int8_npu": 0.1
+  },
+  "maximum_absolute_recall_at_10_drop": 0.02,
+  "maximum_absolute_ndcg_at_10_drop": 0.02,
+  "minimum_mean_ranking_spearman": 0.95
+}

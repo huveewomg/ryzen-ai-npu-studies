@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.conda/
+
+# ONNX models (large binaries)
+*.onnx
+*.xclbin
+*.xmodel
+*.pb
+
+# Quantization artifacts
+*.cache/
+calibration_data/
+
+# Local benchmark/evaluation output. Publication artefacts belong under
+# benchmarks/results/published/ and are intentionally reviewable by Git.
+benchmarks/results/local/
+evaluation/data/
+evaluation/results/local/
+compatibility/results/local/
+environment.local.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# AMD Ryzen AI
+vitisai_ep_report.json
+npu_cache/
+.cache/
+original-info-signature.txt
+original-model-signature.txt
+
+# Local-only logs; sanitised publication logs may be committed deliberately.
+*.local.log

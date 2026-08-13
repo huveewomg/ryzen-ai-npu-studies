@@ -1,0 +1,19 @@
+{
+  "dataset": "zeta-alpha-ai/NanoSciFact",
+  "revision": "309f1d1ae3ae2e092444a8a0c25bed59b82318bc",
+  "license": "CC-BY-4.0",
+  "source_dataset": "SciFact",
+  "split": "train",
+  "expected_rows": {
+    "corpus": 2919,
+    "qrels": 56,
+    "queries": 50
+  },
+  "canonical_sha256": {
+    "corpus": "0a04506969ec3542df8dfb6214f6be93b7e37d8c58e225c1feef31cf676a3ad4",
+    "qrels": "c0122e038b29fe66e059f6232a77a8293578ff04104301e0b38baa231d071a9e",
+    "queries": "e169b6b3bd9fba656b68da01b0bd142ad52c7bd84ba3a6ebf1da17a5feb1dd6e"
+  },
+  "purpose": "Compact public retrieval-fidelity evaluation; not a general embedding benchmark",
+  "source": "https://huggingface.co/datasets/zeta-alpha-ai/NanoSciFact"
+}

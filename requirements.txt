@@ -1,0 +1,6 @@
+# Additional packages installed into the selected Ryzen AI environment.
+# The AMD installer supplies its matching torch, transformers, ONNX, and
+# onnxruntime-vitisai builds; each run records their exact installed versions.
+datasets==5.0.0
+einops==0.8.2
+numpy==1.26.4

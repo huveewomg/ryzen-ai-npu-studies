@@ -1,0 +1,27 @@
+{
+  "id": "beir/scifact",
+  "url": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/scifact.zip",
+  "archive_md5": "5f7d1de60b170fc8027bb7898e2efca1",
+  "archive_sha256": "536e14446a0ba56ed1398ab1055f39fe852686ecad24a6306c80c490fa8e0165",
+  "split": "test",
+  "expected_rows": {
+    "corpus": 5183,
+    "queries": 300,
+    "qrels": 339
+  },
+  "canonical_sha256": {
+    "corpus": "4ff9ff19edc27fc2def69a1c9e18597af9a9f4cb66ba743f9045935c05b3a18c",
+    "queries": "2ac08e33380aa2e33e25afc80e2f81820395da84577aae980bc80e342579b5c0",
+    "qrels": "e27a37f0e8dc99958ed6dd7977f08e28aecf3f0234098aa7daaf55be793e021b"
+  },
+  "licenses": {
+    "claims_and_annotations": "CC-BY-4.0",
+    "abstracts": "ODC-By-1.0",
+    "source": "https://github.com/allenai/scifact/blob/master/LICENSE.md"
+  },
+  "citations": [
+    "Wadden et al. (2020), Fact or Fiction: Verifying Scientific Claims",
+    "Thakur et al. (2021), BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models"
+  ],
+  "purpose": "Full BEIR SciFact test retrieval evaluation; locally materialized and not redistributed"
+}

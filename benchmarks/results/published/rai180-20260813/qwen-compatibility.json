@@ -1,0 +1,268 @@
+{
+  "cells": [
+    {
+      "cell_id": "rai-1.7.1-hidden-off",
+      "failure_signature": {
+        "class": "generation_logits_shape_mismatch",
+        "current_shape": [
+          1,
+          1,
+          151669
+        ],
+        "requested_shape": [
+          1,
+          15,
+          151669
+        ]
+      },
+      "include_hidden_states": false,
+      "oga_execution_provider": "dml",
+      "packages": {
+        "numpy": "1.26.4",
+        "onnxruntime-genai-directml-ryzenai": "0.11.2",
+        "onnxruntime-providers-ryzenai": "0.11.1",
+        "onnxruntime-vitisai": "1.23.3"
+      },
+      "passed": false,
+      "precision": "fp16",
+      "sdk_version": "1.7.1",
+      "stages": [
+        {
+          "elapsed_seconds": 2.4805712000015774,
+          "log_filename": "environment.log",
+          "log_sha256": "26ed5868a0a7eea6c210b9cb7e1639796f85fa8fd0ca04560f10274c6eb2a911",
+          "passed": true,
+          "return_code": 0,
+          "stage": "environment",
+          "started_at_utc": "2026-08-13T12:27:49.663294Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 33.49338020000141,
+          "log_filename": "oga-build.log",
+          "log_sha256": "37b9608c9cc24bb7905bd48a75272d5317320dbeb180459d2d66ff0d45f255ae",
+          "passed": true,
+          "return_code": 0,
+          "stage": "oga-build",
+          "started_at_utc": "2026-08-13T12:27:52.162278Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 13.921515399997588,
+          "log_filename": "hybrid-partition.log",
+          "log_sha256": "a349bb3f1f01f2b562b6f3e54af543dc404ae81589fe7fd0090e11cfdd04b388",
+          "passed": true,
+          "return_code": 0,
+          "stage": "hybrid-partition",
+          "started_at_utc": "2026-08-13T12:28:27.112427Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 9.838362499998766,
+          "log_filename": "hybrid-probe.log",
+          "log_sha256": "018a272835e032263b8e8c9caf6de5b61331d10ab346225a3ea1f303d49f7e5d",
+          "passed": false,
+          "return_code": 1,
+          "stage": "hybrid-probe",
+          "started_at_utc": "2026-08-13T12:28:41.049813Z",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "cell_id": "rai-1.7.1-hidden-on",
+      "failure_signature": {
+        "class": "generation_logits_shape_mismatch",
+        "current_shape": [
+          1,
+          1,
+          151669
+        ],
+        "requested_shape": [
+          1,
+          15,
+          151669
+        ]
+      },
+      "include_hidden_states": true,
+      "oga_execution_provider": "dml",
+      "packages": {
+        "numpy": "1.26.4",
+        "onnxruntime-genai-directml-ryzenai": "0.11.2",
+        "onnxruntime-providers-ryzenai": "0.11.1",
+        "onnxruntime-vitisai": "1.23.3"
+      },
+      "passed": false,
+      "precision": "fp16",
+      "sdk_version": "1.7.1",
+      "stages": [
+        {
+          "elapsed_seconds": 1.6815190999986953,
+          "log_filename": "environment.log",
+          "log_sha256": "7d5a98a62641c019e3559a16f0af878d8b136223d9b1a8caf9f5ecdb2b53283c",
+          "passed": true,
+          "return_code": 0,
+          "stage": "environment",
+          "started_at_utc": "2026-08-13T12:28:50.904990Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 9.858201499999268,
+          "log_filename": "oga-build.log",
+          "log_sha256": "738663a3b5cfa458a9e90ae920b2f521258bbc942aec7677c333f35981f02cf9",
+          "passed": true,
+          "return_code": 0,
+          "stage": "oga-build",
+          "started_at_utc": "2026-08-13T12:28:52.607577Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 12.712486899996293,
+          "log_filename": "hybrid-partition.log",
+          "log_sha256": "40c6716a6d568f16bf8753344044ec01f1ed346a537ed1889747e33d0a3e8a7b",
+          "passed": true,
+          "return_code": 0,
+          "stage": "hybrid-partition",
+          "started_at_utc": "2026-08-13T12:29:03.888561Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 8.655577099998482,
+          "log_filename": "hybrid-probe.log",
+          "log_sha256": "cebf600de2aea74998b38ae257315794297ef3dae8d5a2c5ffdd1122b62b1853",
+          "passed": false,
+          "return_code": 1,
+          "stage": "hybrid-probe",
+          "started_at_utc": "2026-08-13T12:29:16.623228Z",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "cell_id": "rai-1.8.0-hidden-off",
+      "failure_signature": {
+        "class": "hybrid_model_load_dtype_rejection",
+        "operator": "SkipSimplifiedLayerNormalizationBf",
+        "rejected_input_type": "tensor(float16)"
+      },
+      "include_hidden_states": false,
+      "oga_execution_provider": "dml",
+      "packages": {
+        "numpy": "1.26.4",
+        "onnxruntime-genai-directml-ryzenai": "0.14.0",
+        "onnxruntime-providers-ryzenai": "1.8.0",
+        "onnxruntime-vitisai": "1.27.0"
+      },
+      "passed": false,
+      "precision": "fp16",
+      "sdk_version": "1.8.0",
+      "stages": [
+        {
+          "elapsed_seconds": 1.5679141999935382,
+          "log_filename": "environment.log",
+          "log_sha256": "6c42138dd3aae512e88f1e3bac569feb0366c213647343023ca185731bf1fd54",
+          "passed": true,
+          "return_code": 0,
+          "stage": "environment",
+          "started_at_utc": "2026-08-13T12:29:25.295454Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 10.165219099995738,
+          "log_filename": "oga-build.log",
+          "log_sha256": "be78260d929e855e1803387caa3a888976e824c94a577b7822baf7b68f942f77",
+          "passed": true,
+          "return_code": 0,
+          "stage": "oga-build",
+          "started_at_utc": "2026-08-13T12:29:26.888537Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 259.43056459999934,
+          "log_filename": "hybrid-partition.log",
+          "log_sha256": "990b9afc355e6feb00c9fc7cf45c320ca2a496744c6b6e2e61975aca8c414495",
+          "passed": true,
+          "return_code": 0,
+          "stage": "hybrid-partition",
+          "started_at_utc": "2026-08-13T12:29:38.073622Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 2.6780413999949815,
+          "log_filename": "hybrid-probe.log",
+          "log_sha256": "7d6a5ce0edf739c58cb43190b3a473798ec7c92f6a76695583b0e0f87c8b4bd9",
+          "passed": false,
+          "return_code": 1,
+          "stage": "hybrid-probe",
+          "started_at_utc": "2026-08-13T12:33:57.517152Z",
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "cell_id": "rai-1.8.0-hidden-on",
+      "failure_signature": {
+        "class": "hybrid_model_load_dtype_rejection",
+        "operator": "SkipSimplifiedLayerNormalizationBf",
+        "rejected_input_type": "tensor(float16)"
+      },
+      "include_hidden_states": true,
+      "oga_execution_provider": "dml",
+      "packages": {
+        "numpy": "1.26.4",
+        "onnxruntime-genai-directml-ryzenai": "0.14.0",
+        "onnxruntime-providers-ryzenai": "1.8.0",
+        "onnxruntime-vitisai": "1.27.0"
+      },
+      "passed": false,
+      "precision": "fp16",
+      "sdk_version": "1.8.0",
+      "stages": [
+        {
+          "elapsed_seconds": 1.5840517000033287,
+          "log_filename": "environment.log",
+          "log_sha256": "56b90e1198d599875a7bde3ec874456b5f91ea41470048b29f9c13b0e8d33ae2",
+          "passed": true,
+          "return_code": 0,
+          "stage": "environment",
+          "started_at_utc": "2026-08-13T12:34:00.212184Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 9.666626199999882,
+          "log_filename": "oga-build.log",
+          "log_sha256": "1fc29fac979ca99fdfd9250a425de20ab2e0c423062d46beb60d428b8c9ffa64",
+          "passed": true,
+          "return_code": 0,
+          "stage": "oga-build",
+          "started_at_utc": "2026-08-13T12:34:01.822565Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 200.9136176000029,
+          "log_filename": "hybrid-partition.log",
+          "log_sha256": "639abb0be06d81e56357e9c2b16ea14debec0beae3d73785416bd8d7bed96e06",
+          "passed": true,
+          "return_code": 0,
+          "stage": "hybrid-partition",
+          "started_at_utc": "2026-08-13T12:34:12.667228Z",
+          "timed_out": false
+        },
+        {
+          "elapsed_seconds": 2.1938804000019445,
+          "log_filename": "hybrid-probe.log",
+          "log_sha256": "5653c2dc11d823775de8d54a83568e1134096906a56aed0d1ef49748731dc1de",
+          "passed": false,
+          "return_code": 1,
+          "stage": "hybrid-probe",
+          "started_at_utc": "2026-08-13T12:37:33.582575Z",
+          "timed_out": false
+        }
+      ]
+    }
+  ],
+  "model": "Qwen/Qwen3-Embedding-0.6B",
+  "model_snapshot_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "scope_note": "Controlled FP16 OGA DirectML-to-hybrid reproducer. This is not the canonical AWQ flow and must not be generalized beyond the recorded commands.",
+  "source_matrix_sha256": "78a273347a47892f47d52e08a7afe950f305bed9083536beb8b523091ab17b22"
+}
